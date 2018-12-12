@@ -22,3 +22,9 @@ class Post(Timestamp):
 
     def __str__(self):
         return self.title
+
+
+
+# class Follow(models.model):
+#     following_user = models.models.ForeignKey(User, on_delete=models.CASCADE)
+#     followed_user = models.models.ForeignKey(User, on_delete=models.CASCADE)
