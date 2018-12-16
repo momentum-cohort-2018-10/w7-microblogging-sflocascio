@@ -11,3 +11,5 @@ def post_list(request):
     posts = Post.objects.all()
     serializer = PostSerializer(posts, many=True)
     return Response(serializer.data)
+
+

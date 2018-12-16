@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from api import views as api_views
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path( 'api/post/', api_views.post_list, name = 'api_post_list' ),
+    path('', views.index, name = 'home'),
+    path('about', views.about, name = 'about'),
+    path('post/<slug>/', views.post_detail, name = 'post_detail'),
 ]
