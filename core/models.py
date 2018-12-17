@@ -21,7 +21,7 @@ class Post(Timestamp):
     title = models.CharField(max_length=255)
     link = models.URLField(null=True, blank=True)
     description = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
     slug = models.SlugField(unique=True, max_length=255)
     likes = models.IntegerField(null=True)
 

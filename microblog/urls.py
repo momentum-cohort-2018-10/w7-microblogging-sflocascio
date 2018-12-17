@@ -20,7 +20,9 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path( 'api/post/', api_views.post_list, name = 'api_post_list' ),
+    path( 'api/post/', api_views.PostListCreateView.as_view(), name = 'api_post_list' ),
+    path( 'api/users/', api_views.UserListView.as_view(), name = 'api_user_list' ),
+    # path( 'api/follows/', api_views.FollowListCreateView.as_view(), name = 'api_follow_list' ),
     path('', views.index, name = 'home'),
     path('about', views.about, name = 'about'),
     path('post/<slug>/', views.post_detail, name = 'post_detail'),
