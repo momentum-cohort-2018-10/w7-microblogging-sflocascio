@@ -10,16 +10,33 @@
 {% block content %}
 
 
-  {% for post in posts %}
-  <div class = "box">
-    <h1 class = "subtitle"> <a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }} </a></h1>
-    <h2> Author | {{ post.author }} </h2>
-    <p> {{ post.description }} </p>
-    <p> likes | {{ post.likes }} </p>
-  </div>
+
+<div class = "container">
+
+      <a class="subtitle">
+        <span class="icon is-medium">
+          <i class="fas fa-plus-circle"></i>
+        </span>
+        <span>Add a Quiz!</span>
+      </a>
+     
+</div>  
+    {% for post in posts %}
+      <div class = "container box">
+        <h1 class = "title"> <a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }} </a></h1>
+        <h2 class = "subtitle"> Author | {{ post.author }} </h2>
+        <p> Cards | {{ post.likes }} </p>
+        <p> Description | {{ post.description }} </p>
+        <div class="controls">
+            <p class="post-info">
+                
+                <a class="button is-success"><i class="fas fa-check"></i> &nbsp; Take The Quiz</a>
+                <a class="button is-info"> <i class="fas fa-wrench"></i> &nbsp; Edit</a>
+        </div>
+      </div>
     
-    
-  {% endfor %}
+      
+    {% endfor %}
 
 {% endblock content %}
 
